@@ -1,0 +1,9 @@
+var arreglo = [];
+for(var i = 1; i <=4; i++){
+    var random = Math.random()*10
+    arreglo.push(random);
+}
+output(random);
+
+console.log(arreglo);
+//Genera un numero rando i cantidad de veces, y lo agrega a un array
