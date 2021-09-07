@@ -1,0 +1,15 @@
+var array = []
+
+for(var i = 0; i<5; i++){
+    var numeros = input('Dime un numero');
+    array.push(numeros)
+    
+}console.log(array);
+
+//Solucion de Lumetrio
+
+var arreglo = [];
+for (var i = 0; i < 5; i++) {
+    arreglo[i] = input("Número a agregar:");
+}
+
