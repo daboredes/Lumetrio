@@ -1,0 +1,28 @@
+var lista = [];
+var salir = false;
+while(!salir){
+    var opcion = input('Elige la opcion que quieras: \n 1. Agregar item \n 2. Eliminar item \n 3. Mostrar lista \n 4. Salir')
+    switch(opcion){
+        case 1:
+            var item = input('Que item quieres agregar?');
+            lista.push(item);
+        break;
+        case 2:
+            var borrar = input('Que numero de item quiere borrar?');
+            lista.splice(borrar, 1);
+        break;
+        case 3: //En vez del for puede ir un alert(lista) y anda barbaro.
+            for(var i = 0; i < lista.length; i++){
+                alert(lista[i]);
+            }
+        break;
+        case 4:
+            salir = true;
+        break;
+        default:
+            salir = true;
+            alert('No encontre la opcion');
+    }
+}output('No te olvides de nada!');
+output('<br>')
+output(lista)
