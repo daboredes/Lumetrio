@@ -1,0 +1,21 @@
+var arreglo = [1, 5, 9, 7, 8, 4, 3 ];
+var ordenado = false;
+
+while(!ordenado){
+
+    ordenado=true //Defino que esta ordenado para que no sea infinito.
+    
+    for(var i = 0; i<arreglo.length; i++){
+    
+        if(arreglo[i]>arreglo[i+1]){  //Si arreglo 1 es mayor al arreglo 2 entonces no esta ordenado 
+        
+            var aux = arreglo[i];
+            arreglo[i]=arreglo[i+1];
+            arreglo[i+1]=aux;
+            ordenado = false;   //Si el arreglo no esta ordenado, aplica el codigo y se vuelve a repetir.
+
+        }
+    }
+
+}
+console.log(arreglo);
