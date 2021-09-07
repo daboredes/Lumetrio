@@ -1,0 +1,15 @@
+var valoresPosibles = [1, 2, 5, 8, 10];
+var numero=input('Elige un numero');
+var encontrado = false;
+
+for(i=0; i<valoresPosibles.length;i++){
+    if(valoresPosibles[i]==numero){
+        encontrado=true;
+    }
+}
+
+if(encontrado){
+    alert('El numero ya existe');
+}else{
+    alert('Elige otro numero');
+}
