@@ -1,0 +1,6 @@
+var veinte = []
+for(var i = 0; i<=20; i++){
+
+    veinte.push(i);
+    
+}console.log(veinte);
