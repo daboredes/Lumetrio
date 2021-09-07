@@ -1,0 +1,22 @@
+// Este es mi codigo, el output trae error
+var array = [];
+var salir = false
+while(!salir){
+        var numero = input('Elige un numero');
+        if(numero==0){
+            salir = true;
+        }else {
+            array.push(numero);
+        }
+    
+}
+console.log(array);
+
+// Esta es la solucion de Lumetrio
+
+var valor = 1;
+var arreglo = [];
+while(valor != 0) {
+    valor = input("Valor a agregar");
+    arreglo.push(valor);
+}
