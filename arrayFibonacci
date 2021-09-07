@@ -1,0 +1,10 @@
+// Fibonacci 0, 1, 1, 2, 3, 5, 8, 13, 21
+
+var arreglo = [0, 1];
+
+for (var i = 2; i<100; i++){
+
+    arreglo.push(arreglo[i-1]+arreglo[i-2]);
+
+}
+console.log(arreglo);
