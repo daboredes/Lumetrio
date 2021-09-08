@@ -13,3 +13,28 @@ output(suma);
 function ultimoElemento(arreglo) {
     return arreglo[arreglo.length - 1]; // arreglo.length es la cantidad de elementos del arreglo, por lo tanto en arreglo.length - 1 se encuentra el último elemento
 }
+
+
+//Funcion que dado un array, y un valor ingresado, devuelve si esta en el array o no.
+
+function estaEnArray(arreglo, valor) {
+    var esta = false;
+    for(var i = 0; i<arreglo.length; i++){
+        if(valor==arreglo[i]){
+            esta=true;
+        }
+    }
+    return(esta)    
+}
+var arreglo = [0, 1, 2, 3, 4, 5];
+var valor = input('ingresa un valor');
+var estan = estaEnArray(arreglo, valor);
+
+if(estan){
+    output('esta en el arreglo');
+}else {
+    output(' no esta en el arreglo');
+}
+
+
+
