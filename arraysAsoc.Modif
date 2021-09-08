@@ -1,0 +1,24 @@
+var alumnos = [
+    {
+        nombre: 'Carla',
+        nota: 12,
+        inasistencias: 3
+    },
+    {
+        nombre: 'Juan',
+        nota: 8,
+        inasistencias: 4
+    },
+    {
+        nombre: 'Andrés',
+        nota: 10,
+        inasistencias: 6
+    }
+]
+
+//Asi se modifican los datos
+alumnos[1]['nota']=12 // [1] es la posicion ['nota'] es el elemento.
+console.log(alumnos)
+
+
+
