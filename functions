@@ -54,3 +54,16 @@ function perimetroCirculo(radio){ //la variable o parametro puede tener cualquie
 var radio = input('Ingresa el radio del circulo');
 var perimetro = perimetroCirculo(radio);
 output(perimetro);
+
+
+
+//Funcion que trae las iniciales de nombre y apellido.
+function iniciales (nombre, apellido){
+    return nombre.charAt(0) + '. ' + apellido.charAt(0) + '.';
+}
+
+var nombre = input('Dime un nombre');
+var apellido = input('Dime un apellido');
+
+var i = iniciales(nombre, apellido);
+output(i);
