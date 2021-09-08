@@ -10,14 +10,11 @@ alumnos.push(lumetrito);
 
 // Creacion del Array;
 var personas = [
-
     {
         nombre: 'David',
         apellido: 'Hernandez',
         edad: 28,
-
     }
-
 ]
 
 // Se pueden agregar elementos con array.push;
@@ -40,3 +37,24 @@ var persona={
 };
 
 personas.push(persona);
+
+//Para mostrar los datos del Array Asociativo
+
+var comentarios = [
+    {
+        alumno: 'Carla',
+        comentario: 'Está bueno el curso!'
+    },
+    {
+        alumno: 'Punku',
+        comentario: '¿Qué curso?'
+    },
+    {
+        alumno: 'Javier',
+        comentario: 'El profe es un genio.'
+    }
+];
+
+for (var i = 0; i < comentarios.length; i++) {
+    output(comentarios[i]['alumno'] + ' dice: ' + comentarios[i]['comentario']);
+}
