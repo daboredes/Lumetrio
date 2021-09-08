@@ -1,0 +1,8 @@
+var juan = { "nombre": "Juan", "inasistencias": 2, "nota": 8 };
+var ana = { "nombre": "Ana", "inasistencias": 3, "nota": 12 };
+var pedro = { "nombre": "Pedro", "inasistencias": 3, "nota": 7 };
+var alumnos = [ juan, ana, pedro ];
+var lumetrito = {'nombre': 'Lumetrito', 'inasistencias': 1, 'nota': 12};
+alumnos.push(lumetrito);
+
+//En vez de posiciones, las etiquetas senialan la posicion
