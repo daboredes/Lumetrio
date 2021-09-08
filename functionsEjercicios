@@ -1,0 +1,15 @@
+//Funcion suma 2 variables
+
+function suma (x, y){
+    return x + y;
+}
+var x = input('Ingresa un numero');
+var y = input('Ingresa otro numero');
+var suma = suma(x, y);
+output(suma);
+
+
+//Funcion que trae el ultimo elemento de un arreglo
+function ultimoElemento(arreglo) {
+    return arreglo[arreglo.length - 1]; // arreglo.length es la cantidad de elementos del arreglo, por lo tanto en arreglo.length - 1 se encuentra el último elemento
+}
