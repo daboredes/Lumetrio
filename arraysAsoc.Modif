@@ -20,5 +20,13 @@ var alumnos = [
 alumnos[1]['nota']=12 // [1] es la posicion ['nota'] es el elemento.
 console.log(alumnos)
 
+// Asi se pueden agregar elementos tambien.
+alumnos.push({
+    nombre: 'Punku',
+    nota: 4,
+    inasistencias: 13,
+})
+
+console.log(alumnos)
 
 
