@@ -6,3 +6,37 @@ var lumetrito = {'nombre': 'Lumetrito', 'inasistencias': 1, 'nota': 12};
 alumnos.push(lumetrito);
 
 //En vez de posiciones, las etiquetas senialan la posicion
+
+
+// Creacion del Array;
+var personas = [
+
+    {
+        nombre: 'David',
+        apellido: 'Hernandez',
+        edad: 28,
+
+    }
+
+]
+
+// Se pueden agregar elementos con array.push;
+
+personas.push({
+    nombre: 'Ana',
+    apellido: 'Perez',
+    edad: 17
+});
+
+//Para agregar datos con inputs
+var nombre = input('Ingrese un nombre');
+var apellido = input('Ingrese un apellido');
+var edad = input('Ingrese una edad');
+
+var persona={
+    nombre: nombre,
+    apellido: apellido,
+    edad: edad
+};
+
+personas.push(persona);
