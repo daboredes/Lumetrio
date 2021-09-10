@@ -1,10 +1,13 @@
 function menu(){
     html=`
-        <br> //Deja un espacio para el resultado;
-        <button onclick=suma()> + </button> //El atributo onclick llama la funcion;
+        <br>
+        <button onclick=suma()> + </button>
         <button onclick=resta()> - </button>
         <button onclick=multiplicacion()> x </button>
         <button onclick=division()> / </button>
+        <button onclick=potencia()> x^y </button>
+        <button onclick=raiz()> √ </button>
+        <button onclick=raices()> raices ec. de 2do grado </button>
     `;
     output(html);
 }
@@ -13,7 +16,7 @@ menu();
 function suma(){
     var primerNumero = input('Ingresa un numero');
     var segundoNumero = input('Ingresa otro numero');
-    var resultadoSuma = (primerNumero+segundoNumero);
+    var resultadoSuma = (primerNumero+segundoNumero);//Cree las variables resultados para no marearme.
     clear();
     if(primerNumero && segundoNumero){
         output(primerNumero + '+' + segundoNumero + '=' + resultadoSuma);
@@ -50,10 +53,9 @@ function division(){
     var numerador = input('Ingresa el numerado');
     var denominador = input('el denominador');
     var cocienteBruto = (numerador/denominador);
-    var cocienteFino = cocienteBruto.toFixed(2);
     clear();
     if(numerador && denominador){
-        output(numerador + '/' + denominador + '=' +  cocienteFino);
+        output(numerador + '/' + denominador + '=' +  cocienteBruto.toFixed(2));
         output('<br>');
         output('El resto de la division es: ' + (numerador%denominador));
     }else if(denominador==0){
