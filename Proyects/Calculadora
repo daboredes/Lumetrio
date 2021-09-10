@@ -1,0 +1,119 @@
+function menu(){
+    html=`
+        <br> //Deja un espacio para el resultado;
+        <button onclick=suma()> + </button> //El atributo onclick llama la funcion;
+        <button onclick=resta()> - </button>
+        <button onclick=multiplicacion()> x </button>
+        <button onclick=division()> / </button>
+    `;
+    output(html);
+}
+menu();
+
+function suma(){
+    var primerNumero = input('Ingresa un numero');
+    var segundoNumero = input('Ingresa otro numero');
+    var resultadoSuma = (primerNumero+segundoNumero);
+    clear();
+    if(primerNumero && segundoNumero){
+        output(primerNumero + '+' + segundoNumero + '=' + resultadoSuma);
+    }else{
+        output('Operacion cancelada');
+    }
+    menu();
+}
+function resta(){
+    var primerNumero = input('Ingresa un numero');
+    var segundoNumero = input('Ingresa otro numero');
+    var resultadoResta = (primerNumero-segundoNumero);
+    clear();
+    if(primerNumero && segundoNumero){
+        output(primerNumero + '-' + segundoNumero + '=' + resultadoResta);
+    }else{
+        output('Operacion cancelada');
+    }
+    menu();
+}
+function multiplicacion(){
+    var primerNumero = input('Ingresa un numero');
+    var segundoNumero = input('Ingresa otro numero');
+    var producto = (primerNumero*segundoNumero);
+    clear();
+    if(primerNumero && segundoNumero){
+        output(primerNumero + 'x' + segundoNumero + '=' + producto);
+    }else{
+        output('Operacion cancelada');
+    }
+    menu();
+}
+function division(){
+    var numerador = input('Ingresa el numerado');
+    var denominador = input('el denominador');
+    var cocienteBruto = (numerador/denominador);
+    var cocienteFino = cocienteBruto.toFixed(2);
+    clear();
+    if(numerador && denominador){
+        output(numerador + '/' + denominador + '=' +  cocienteFino);
+        output('<br>');
+        output('El resto de la division es: ' + (numerador%denominador));
+    }else if(denominador==0){
+        output('No se puede dividir entre 0');
+    }else{
+        output('Operacion cancelada')
+    }
+    menu();
+}
+function potencia(){
+    var base = input('Ingrese la base');
+    var exponente = input('Ingrese el exponente');
+    var potencia = Math.pow(base, exponente);
+    clear();
+    if(potencia){
+        output(base + '^' + exponente + '=' + potencia);
+    }else{
+        output('Operacion Cancelada');
+    }
+    menu();
+}
+function raiz(){
+    var radicando = input('Ingrese un numero');
+    var raiz = (Math.sqrt(radicando)).toFixed(2);
+    clear();
+    if(radicando){
+        if(radicando<0){
+            output('No existe solucion real');
+        }else if(radicando>=0){
+            output('√'+radicando+'='+raiz);
+        }
+    }else{
+        output('Operacion cancelada');
+    }            
+    menu();
+}
+function raices(){
+    var a = input('Ingrese el termino a');
+    var b = input('Ingrese el termino b');
+    var c = input('Ingrese el termino independiente');
+    var discriminante = (Math.pow(b, 2) - (4 * a * c));
+    var raiz1 = ((-b+Math.sqrt(discriminante))/(2*a))
+    var raiz2 = ((-b-Math.sqrt(discriminante))/(2*a))
+    var raizDoble = ((-b)/(2*a));
+    clear();
+    if(a && b && c){
+        if(discriminante<0){
+            output('No existen raices reales para la ecuacion');
+        }else if(discriminante==0){
+            output('La ecuacion tiene raiz doble: ' + raizDoble.toFixed(2));
+        }else{  
+        output('La ecuacion tiene raices ' + raiz1.toFixed(2) + ' y ' + raiz2.toFixed(2));
+        }
+    }else{
+        output('Faltan ingresar datos');
+    }
+    menu();
+}
+
+/*function menuSuma(){
+    html
+}
+*/
