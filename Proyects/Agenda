@@ -1,0 +1,91 @@
+var contactos = [];
+function menu(){
+    var html = `
+        <button onclick="nuevo()"> Agregar nuevo </button>
+        <button onclick="mostrarContactos()"> Mostrar contactos </button>
+        <button> Eliminar contacto </button>    
+    `;
+    output(html);
+}
+menu();
+function nuevo(){
+    var nombre = input('Nombre');
+    var apellido = input('Apellido');
+    var numero = input('Numero');
+    var nacimiento = input('Fecha de nacimiento');
+    contactos.push({    //Este es el array asociativo.
+        'nombre': nombre,
+        'apellido': apellido,
+        'numero': numero,
+        'nacimiento': nacimiento
+    });
+}
+function mostrarContactos(){
+    output('<br>');
+    for(var i=0; i<contactos.length; i++){
+        output("<button onclick='detalles("+ i +")'>" +contactos[i]['nombre'] + " " + contactos[i]['apellido'] + "</button>")
+    }
+}
+function detalles(posicion){
+    var contacto = contactos[posicion];
+    clear();
+    output('<br>');
+    outptu('Nombre: ' + contacto['nombre']);
+    output('<br>');
+    outptu('Apellido: ' + contacto['apellido']);
+    output('<br>');
+    outptu('telefono: ' + contacto['telefono']);
+    output('<br>');
+    outptu('nacimiento: ' + contacto['nacimiento']);
+}
+var contactos = [];
+function menu(){
+    var html = `
+        <button onclick="nuevo()"> Agregar nuevo </button>
+        <button onclick="mostrarContactos()"> Mostrar contactos </button>
+        <button onclic="eliminarContacto()"> Eliminar contacto </button>    
+    `;
+    output(html);
+}
+menu();
+function nuevo(){
+    var nombre = input('Nombre');
+    var apellido = input('Apellido');
+    var numero = input('Numero');
+    var nacimiento = input('Fecha de nacimiento');
+    contactos.push({    //Este es el array asociativo.
+        'nombre': nombre,
+        'apellido': apellido,
+        'numero': numero,
+        'nacimiento': nacimiento
+    });
+}
+function mostrarContactos(){
+    clear();
+    output('<br>');
+    for(var i=0; i<contactos.length; i++){
+        output("<button onclick='detalles("+ i +")'>" +contactos[i]['nombre'] + " " + contactos[i]['apellido'] + "</button>")
+    }
+}
+function detalles(posicion){
+    var contacto = contactos[posicion];
+    clear();
+    output('<br>');
+    output('Nombre: ' + contacto['nombre']);
+    output('<br>');
+    output('Apellido: ' + contacto['apellido']);
+    output('<br>');
+    output('Telefono: ' + contacto['numero']);
+    output('<br>');
+    output('Nacimiento: ' + contacto['nacimiento']);
+    output('<br>');
+    output('<button onclick="volverAlMenu()"> Volver al Menu</button>');
+}
+function volverAlMenu(){
+    clear();
+    menu();
+}
+function eliminarContacto(){
+    var nombre = input)
+    //Sigue....
+}
