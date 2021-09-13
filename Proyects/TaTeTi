@@ -1,0 +1,6 @@
+var tablero = [
+    ['_', '_', '_'],
+    ['_', '_', '_'],
+    ['_', '_', '_'] //este no lleva coma porque es el ultimo elemento.
+
+];
