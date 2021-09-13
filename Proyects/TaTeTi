@@ -1,6 +1,83 @@
-var tablero = [
+var board = [
     ['_', '_', '_'],
     ['_', '_', '_'],
-    ['_', '_', '_'] //este no lleva coma porque es el ultimo elemento.
+    ['_', '_', '_'] //No lleva , porque es el ultimo elemento
 
 ];
+var turno = 'x';
+
+function drawBoard(){
+    for(var i=0; i<board.length; i++){//Javier usa i<3, pero creo que es lo mismo.
+        for(var j=0; j<board.length; j++){
+            var button = '<button onclick="select('+ i + ',' + j +')">' + board[i][j] + '</button>';
+            output(button);
+        }
+        output('<br>');//el br esta aca para hacer 3 columnas.
+    }
+}
+/*var button = '<button onclick="select('+ i + ',' + j +')">' + board[i][j] + '</button>';
+cuando se le pasa la coordenada 1,2=> <button onclick="select(1,2)>
+*/
+function select(i, j){ //Se le pasan los parametros para identificar que lugar selecciona
+    if(board[i][j] == '_'){
+        board[i][j] = turno; // cambia el valor del _ por una x;
+        if(turno=='x'){
+            turno='o';
+        }else{
+            turno = 'x';
+        }
+        clear();//borra los trableros que se crean cada vez que se llama esta funcion
+        drawBoard();
+        verify();//creamos una funcion que se ejecute cada vez que cambia el tablero
+    }
+}//El tema es que siempre se va a poner x, para eso se crea variable turno.
+function verify(){
+    for(var i = 0; i<3; i++){//Este iterador es para las filas.
+        var x = 0;
+        var o = 0;
+        for(j=0; j<board.length; j++){
+            if(board[i][j]=='x'){
+                x++;
+            }
+            if(board[i][j]=='o'){
+                o++;
+            }
+        }
+        if(x == 3){
+            winner('x');        
+        }
+        if(o == 3){
+            winner('o');
+        }
+    }
+    for(var j = 0; j<3; j++){//Este iterador es para las filas.
+        var x = 0;
+        var o = 0;
+        for(i=0; i<board.length; i++){
+            if(board[i][j]=='x'){
+                x++;
+            }
+            if(board[i][j]=='o'){
+                o++;
+            }
+        }
+        if(x == 3){
+            winner('x');        
+        }
+        if(o == 3){
+            winner('o');
+        }
+    }
+    if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != '_') {
+        winner( board[0][0] );
+    }
+    if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != '_') {
+        winner( board[0][2] );
+    }
+}
+function winner(y){
+    output('<br>');
+    output('Ganaron las ' + y)
+}
+
+drawBoard();
