@@ -1,49 +1,10 @@
 var contactos = [];
 function menu(){
     var html = `
+        <br>
         <button onclick="nuevo()"> Agregar nuevo </button>
         <button onclick="mostrarContactos()"> Mostrar contactos </button>
-        <button> Eliminar contacto </button>    
-    `;
-    output(html);
-}
-menu();
-function nuevo(){
-    var nombre = input('Nombre');
-    var apellido = input('Apellido');
-    var numero = input('Numero');
-    var nacimiento = input('Fecha de nacimiento');
-    contactos.push({    //Este es el array asociativo.
-        'nombre': nombre,
-        'apellido': apellido,
-        'numero': numero,
-        'nacimiento': nacimiento
-    });
-}
-function mostrarContactos(){
-    output('<br>');
-    for(var i=0; i<contactos.length; i++){
-        output("<button onclick='detalles("+ i +")'>" +contactos[i]['nombre'] + " " + contactos[i]['apellido'] + "</button>")
-    }
-}
-function detalles(posicion){
-    var contacto = contactos[posicion];
-    clear();
-    output('<br>');
-    outptu('Nombre: ' + contacto['nombre']);
-    output('<br>');
-    outptu('Apellido: ' + contacto['apellido']);
-    output('<br>');
-    outptu('telefono: ' + contacto['telefono']);
-    output('<br>');
-    outptu('nacimiento: ' + contacto['nacimiento']);
-}
-var contactos = [];
-function menu(){
-    var html = `
-        <button onclick="nuevo()"> Agregar nuevo </button>
-        <button onclick="mostrarContactos()"> Mostrar contactos </button>
-        <button onclic="eliminarContacto()"> Eliminar contacto </button>    
+        <button onclick="eliminarContacto()"> Eliminar contacto </button>   
     `;
     output(html);
 }
@@ -66,7 +27,9 @@ function mostrarContactos(){
     for(var i=0; i<contactos.length; i++){
         output("<button onclick='detalles("+ i +")'>" +contactos[i]['nombre'] + " " + contactos[i]['apellido'] + "</button>")
     }
-}
+    output('<br>');
+    output('<button onclick="volverAlMenu()"> Volver al Menu</button>');
+}   
 function detalles(posicion){
     var contacto = contactos[posicion];
     clear();
@@ -86,6 +49,21 @@ function volverAlMenu(){
     menu();
 }
 function eliminarContacto(){
-    var nombre = input)
-    //Sigue....
+    var nombre = input('Nombre del contacto a eliminar');
+    var apellido = input('Apellido del contacto a eliminar');
+    var posicion = -1;
+    for (var i = 0; i<contactos.length; i++){
+        if(contactos[i]['nombre'] == nombre && contactos[i]['apellido'] == apellido){
+            posicion=i;
+        }
+    }
+    clear();
+    if(posicion!=-1){
+        contactos.splice(posicion, 1);
+    }else{
+        output('No se encontro el contacto');
+        output('<br');
+        menu();
+    }
+    
 }
