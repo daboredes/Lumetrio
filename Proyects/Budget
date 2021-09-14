@@ -1,0 +1,63 @@
+var ingresos = [];
+var totalIngresos = [];
+var gastos = [];
+function menu(){
+    var html = `
+        <button onclick='agregarIngreso()'> Agregar un ingreso </button>
+        <button onclick='agregarGasto()'> Agregar un gasto </button>
+        <button onclick='verIngresos()'> Ver tus ingresos </button>
+        <button onclick='verGastos()'> Ver tus gastos </button>
+        <button onclick='totalIng()'> Ver tu saldo </button> // Ojo que llama la funcion total ingresos!
+        <br>
+        <button> Modificar un ingreso </button>
+        <button> Modificar un gasto </button>    
+    `;
+    output(html);
+}
+menu();
+function volverAtras(){
+    clear();
+    menu();
+}
+function agregarIngreso(){
+        var monto = input('Ingresa el monto');
+        var concepto = input('Ingresa una descripcion');
+        var fecha = input('Ingresa la fecha');
+    totalIngresos.push(monto);
+    ingresos.push({        
+        'monto': monto,
+        'concepto': concepto,
+        'fecha': fecha
+    });
+}
+function agregarGasto(){
+    gastos.push({
+        'monto': input('Ingresa el monto'),
+        'concepto': input('Ingresa una descripcion'),
+        'fecha': input('Ingresa la fecha del gasto')
+    });
+}
+function verIngresos(){
+    clear();
+    for(var i = 0; i<ingresos.length; i++){
+        output(ingresos[i]['fecha'] + ' ' + ingresos[i]['monto'] + ' ' + ingresos[i]['concepto']);
+        output('<br>');          
+    }    
+    output('<br>');
+    output('<button onclick="volverAtras()"> Volver al Menu</button>');
+}
+function totalIng(){
+    var suma = 0;
+    for(var i=0; i<totalIngresos.length; i++){
+        suma+=totalIngresos[i];
+    }output(suma);
+}
+function verGastos(){
+    clear();
+    for(var i = 0; i<gastos.length; i++){
+        output(gastos[i]['fecha'] + ' ' + gastos[i]['monto'] + ' ' + gastos[i]['concepto']);
+        output('<br>');          
+    }
+    output('<br>');
+    output('<button onclick="volverAtras()"> Volver al Menu</button>');
+}
