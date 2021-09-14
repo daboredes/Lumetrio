@@ -7,10 +7,7 @@ function menu(){
         <button onclick='agregarGasto()'> Agregar un gasto </button>
         <button onclick='verIngresos()'> Ver tus ingresos </button>
         <button onclick='verGastos()'> Ver tus gastos </button>
-        <button onclick='totalIng()'> Ver tu saldo </button> // Ojo que llama la funcion total ingresos!
-        <br>
-        <button> Modificar un ingreso </button>
-        <button> Modificar un gasto </button>    
+        <br> 
     `;
     output(html);
 }
@@ -20,44 +17,59 @@ function volverAtras(){
     menu();
 }
 function agregarIngreso(){
-        var monto = input('Ingresa el monto');
-        var concepto = input('Ingresa una descripcion');
-        var fecha = input('Ingresa la fecha');
-    totalIngresos.push(monto);
-    ingresos.push({        
-        'monto': monto,
-        'concepto': concepto,
-        'fecha': fecha
-    });
+    var monto = input('Ingresa el monto');
+    var concepto = input('Ingresa una descripcion');
+    var fecha = input('Ingresa la fecha');
+    if(monto&&concepto&&fecha){
+        totalIngresos.push(monto);
+        ingresos.push({        
+            'monto': monto,
+            'concepto': concepto,
+            'fecha': fecha
+        });
+    }else{
+        output('Debe ingresar datos validos en todos los campos');
+        output('<br>');
+        menu();
+    }
 }
 function agregarGasto(){
-    gastos.push({
-        'monto': input('Ingresa el monto'),
-        'concepto': input('Ingresa una descripcion'),
-        'fecha': input('Ingresa la fecha del gasto')
-    });
+    var monto = input('Ingresa el monto');
+    var concepto = input('Ingresa una descripcion');
+    var fecha = input('Ingresa la fecha');
+    if(monto && concepto && fecha){
+        gastos.push({
+            'monto': monto,
+            'concepto': concepto,
+            'fecha': fecha
+        });
+    }else{
+        output('Debe ingresar datos validos en todos los campos');
+        output('<br>');
+        menu();
+    }
 }
 function verIngresos(){
+    var sumaIngresos = 0;
     clear();
     for(var i = 0; i<ingresos.length; i++){
-        output(ingresos[i]['fecha'] + ' ' + ingresos[i]['monto'] + ' ' + ingresos[i]['concepto']);
-        output('<br>');          
-    }    
+        output(ingresos[i]['fecha'] + ' - ' + ingresos[i]['monto'] + ' - ' + ingresos[i]['concepto']);
+        output('<br>');
+        sumaIngresos += ingresos[i]['monto'];
+    }
+    output('Total de ingresos: ' + sumaIngresos);
     output('<br>');
     output('<button onclick="volverAtras()"> Volver al Menu</button>');
 }
-function totalIng(){
-    var suma = 0;
-    for(var i=0; i<totalIngresos.length; i++){
-        suma+=totalIngresos[i];
-    }output(suma);
-}
 function verGastos(){
+    var sumaGastos = 0;
     clear();
     for(var i = 0; i<gastos.length; i++){
-        output(gastos[i]['fecha'] + ' ' + gastos[i]['monto'] + ' ' + gastos[i]['concepto']);
-        output('<br>');          
+        output(gastos[i]['fecha'] + ' - ' + gastos[i]['monto'] + ' - ' + gastos[i]['concepto']);
+        output('<br>');
+        sumaGastos += gastos[i]['monto'];
     }
+    output('Total de gastos: ' + sumaGastos);
     output('<br>');
     output('<button onclick="volverAtras()"> Volver al Menu</button>');
 }
