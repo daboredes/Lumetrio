@@ -21,7 +21,10 @@ function volverAtras(){
 function agregarIngreso(){
     var monto = input('Ingresa el monto');
     var concepto = input('Ingresa una descripcion');
-    var fecha = input('Ingresa la fecha');
+    var fecha = 0;
+    while(fecha>31 || fecha<1){
+    fecha = input('Ingresa la fecha');
+    }
     if(monto&&concepto&&fecha){
         ingresos.push({        
             'monto': monto,
@@ -38,7 +41,10 @@ function agregarIngreso(){
 function agregarGasto(){
     var monto = (input('Ingresa el monto del gasto')*-1); // el -1 es para que en pantalla se muestre el gasto como numero negativo.
     var concepto = input('Ingresa una descripcion');
-    var fecha = input('Ingresa la fecha');
+    var fecha = 0;
+    while(fecha>31 || fecha<1){
+        fecha = input('Ingresa la fecha');
+    }
     if(monto && concepto && fecha){
         gastos.push({
             'monto': monto,
