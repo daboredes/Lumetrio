@@ -23,7 +23,7 @@ function agregarIngreso(){
     var concepto = input('Ingresa una descripcion');
     var fecha = 0;
     while(fecha>31 || fecha<1){
-    fecha = input('Ingresa la fecha');
+        fecha = input('Ingresa la fecha');
     }
     if(monto&&concepto&&fecha){
         ingresos.push({        
@@ -60,12 +60,24 @@ function agregarGasto(){
 }
 function verIngresos(){
     clear();
+    var ordenado = false;
     output('Dia - Importe - Concepto'); //Esta linea es para hacerlo más descriptivo.
     output('<br>');
-    for(var i = 0; i<ingresos.length; i++){
-        output(ingresos[i]['fecha'] + '  -  ' + ingresos[i]['monto'] + '  -  ' + ingresos[i]['concepto']);
+    while(!ordenado){
+        ordenado=true;
+        for(var i = 0; i<ingresos.length-1; i++){
+            if(ingresos[i]['fecha']>ingresos[i+1]['fecha']){
+                var aux = ingresos[i];
+                ingresos[i]=ingresos[i+1];
+                ingresos[i+1]=aux;
+                ordenado = false;
+            }
+        }
+    }//Ordena al array por fecha. El ingresos.lenght-1 es clave, porque itera de 0 hasta i=ingresos.length si uso [i+1] y yo defini i<ingresos.length
+    for(var j = 0; j<ingresos.length; j++){
+        output(ingresos[j]['fecha'] + '  -  ' + ingresos[j]['monto'] + '  -  ' + ingresos[j]['concepto']);
         output('<br>');
-        sumaIngresos += ingresos[i]['monto']; //Variable que muestra la suma de todos los ingresos
+        sumaIngresos += ingresos[j]['monto']; //Variable que muestra la suma de todos los ingresos
     }
     output('<br>');
     output('Total de ingresos: ' + sumaIngresos);
@@ -74,12 +86,24 @@ function verIngresos(){
 }
 function verGastos(){
     clear();
+    var ordenado = false;
     output('Dia - Importe - Concepto');
     output('<br>');
-    for(var i = 0; i<gastos.length; i++){
-        output(gastos[i]['fecha'] + '  -  ' + gastos[i]['monto'] + '  -  ' + gastos[i]['concepto']);
+    while(!ordenado){
+        ordenado=true;
+        for(var i = 0; i<gastos.length-1; i++){
+            if(gastos[i]['fecha']>gastos[i+1]['fecha']){
+                var aux = gastos[i];
+                gastos[i]=gastos[i+1];
+                gastos[i+1]=aux;
+                ordenado = false;
+            }
+        }
+    }
+    for(var j = 0; j<gastos.length; j++){
+        output(gastos[j]['fecha'] + '  -  ' + gastos[j]['monto'] + '  -  ' + gastos[j]['concepto']);
         output('<br>');
-        sumaGastos += gastos[i]['monto'];//Variable que muestra la suma de todos los gastos
+        sumaGastos += gastos[j]['monto'];//Variable que muestra la suma de todos los gastos
     }
     output('<br>');
     output('Total de gastos: ' + sumaGastos);
