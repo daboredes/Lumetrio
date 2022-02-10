@@ -1,0 +1,6 @@
+* es para seleccionar todas las etiquetas de la pagina.
+
+.class1.class2 solo se activa si el elemento tiene ambas clases.
+.class1 .class2 solo targetea a los class2 dentro de class1
+
+tag1, tag2 es para seleccionar varios tags y aplicar el mismo formato.
