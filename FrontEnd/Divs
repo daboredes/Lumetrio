@@ -1,0 +1,20 @@
+Positions:
+
+-Static: es la posición por defecto. indica que el elemento aparecerá en el orden que aparece en el documento.
+
+-Relative: Es igual que static, pero se habilitan 4 propiedades si se setea: top, right, bottom, left.
+  .div{
+    position: relative;
+    left: 20px;
+  }
+    El div se va a mover 20 px desde la izquierda desde la posicion original. 
+    La posicion de los demas elementos no se vera afectada por el movimiento.
+    
+-Absolute: el lugar final que va a tomar lo va a calcular de acuerdo a la posicion de algun elemento padre, y no de su lugar relativo.
+  Los demas elementos si se van a ver afectados por esta propiedad, porque sale del flujo de html.
+  Tambien se habilitan las 4 propiedades de espacio, pero se calculan a partir del parent.
+  
+-Fixed: toma el valor absoluto de la pagina para ubicarse.
+
+-Sticky: es una fusion de relative y fixed. Es relative, y pasa a ser fixed cuando el elemento queda fuera del viewport.
+  Hay que definirle una propiedad de posicion top, right, bottom o left.
