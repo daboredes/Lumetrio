@@ -1,0 +1,37 @@
+Define que espacio  va a tomar un elemento en la pantalla.
+
+-Display: block es la que viene por defecto en muchos tags. El div va a tomar todo el ancho disponible de la pantalla. El resto de los
+  elementos se posicionaran arriba o debajo del div.
+  
+-Inline: la etiqueta va a tomar el mínimo espacio disponible, y el resto de los elementos se va a posicionar a los lados; si se queda sin 
+  ancho, pasa a la segunda fila.
+
+-Inline - Block: es la fusión de las dos anteriores. Permite definir atributos de width y height a la etiqueta.
+
+-None: convierte el tag en invisible.
+
+-Flex: permite ordenar los elementos de forma flexible. Dentro del contenedor con display flex, los contenedores se ordenan como si fueran display inline. 
+  El contenedor original se sigue comportando como block.
+  Los contenedores con display flex, tienen habilitado el atributo flex-direction: row y flex-direction: column. Para ordenar como fila o columna sus hijos.
+  Por defecto viene row.
+  El atributo justify-content: permite ordenar los elementos dentro del div. El valor space-between es el que los ordena de forma justificada, para que ocupen
+  todo el contenedor de forma equidistante.
+  justify-content: space-around ordena de igual forma, pero mas separada de los bordes del div.
+  justify-content: flex-start ordena todos los elementos al comienzo. Y flex-end, ordena todo al final.
+  justify-content: centre ordena todo al centro.
+  justify-content: space-evenly ordena todo de forma equidistante.
+  Para alinear los elementos de forma vertical, esta el atributo align-items: -center para alinearlos de forma centrada - flex-end para alinearlos desde abajo y -flex-start 
+  para alinearlos desde el top.
+  justify-content alinea los elementos de forma horizontal, y align-items lo hace de forma vertical. Entonce si estamos trabajando con flex-direction: column
+  invertimos los usos.
+  
+  Propiedades de los child:
+  align-self: flex-start, para que ese elementos se situe al principio del parent.
+  align-self: flex-start, para que ese elementos se situe al final del parent.
+  align-self: flex-start, para que ese elementos se situe al medio del parent.
+  
+  order: n...; sirve para cambiar el orden de los elementos sin cambiar el html.- va de 0 a n. Si no se define el valor a uno, aparece primero.
+  
+  flex: grow y flex: shrink son para cambiar el tamano de los elementos respecto a flex-direction. Se define a todos los elementos y se hace la proporcion, con un elemento con 
+  grow 1, y dos elementos con grow 2. El primero va a ser de la mitad del tamano que el resto, y ellos van a ser iguales.
+  Para flex: shrink tambien se define flex: basis que es para que cambie a partir del viewport.
