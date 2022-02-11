@@ -34,4 +34,5 @@ Define que espacio  va a tomar un elemento en la pantalla.
   
   flex: grow y flex: shrink son para cambiar el tamano de los elementos respecto a flex-direction. Se define a todos los elementos y se hace la proporcion, con un elemento con 
   grow 1, y dos elementos con grow 2. El primero va a ser de la mitad del tamano que el resto, y ellos van a ser iguales.
-  Para flex: shrink tambien se define flex: basis que es para que cambie a partir del viewport.
+  Para flex: shrink tambien se define flex: basis que es para que cambie a partir del viewport. 
+  Puede suceder que no querramos cambiar el tamaño de los child, y para eso se usa flexh-shrink: 0 en el child y flex-wrap: wrap en el parent.
