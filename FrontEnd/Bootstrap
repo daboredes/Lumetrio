@@ -25,3 +25,5 @@ Se resume a propiedad-pantalla-valor.
       hasta pantallas xs usa todas las columnas para un elemento, a partir de pantallas sm usa la mitad para cada elemento.
       
  -text-center es una clase que centra todo el texto.
+
+En el NavBar, la class fixed-top aplica position fixed y margin top 0  z-indez super alto.
