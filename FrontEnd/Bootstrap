@@ -1,0 +1,27 @@
+-Paddings: p-1 al p-5 como clase.
+-Margins: m-1 al m-5 como clase.
+
+Bootstrap dive las pantallas desde xs a xxl.
+xs no tiene clase, luego van sm, md, lg, xl y xxl.
+<div class='p-1 p-md-3 p-xl-5'> DIV </div> hace que tenga un padding 1, pero a partir de pantallas medianas, tiene un padding3 y para pantallas grandes, un padding5.
+Se resume a propiedad-pantalla-valor.
+
+-Grid. En bootstrap se define que una web puede tener indefinidas rows, pero solo 12 columns.
+  .container es donde se ubica la grilla. .container-fluid ocupa siempre el 100% del ancho del viewport.
+  .container-xs, .container-md para definir el tamano de la pantalla.
+  .row son las filas de la tabla. Se muestran de arriba hacia abajo.
+  .col es cada elemento que va a aparecer en la fila. Se define con un numero del 1 al 12 (12 es redundante porque seria el 100% del ancho). Ese numero divide la pantalla 
+ 12/n. Si n=6 entonces son 2 elementos, si n=4 entonces son 3 y asi sucecivamente.
+ Estructura:
+  <div class='container'> Contenedor 
+    <div class='row'> Fila 
+      <div class='col-6'> Elemento 1 </div>
+      <div class='col-6'> Elemento 2 </div>
+    </div>
+  </div>
+  Para hacerlo responsive, se agregan clases para cada tamano de viewport:
+  
+      <div class='col-12 col-sm-6'> Elemento 2 </div>
+      hasta pantallas xs usa todas las columnas para un elemento, a partir de pantallas sm usa la mitad para cada elemento.
+      
+ -text-center es una clase que centra todo el texto.
