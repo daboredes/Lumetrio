@@ -9,6 +9,7 @@ Define que espacio  va a tomar un elemento en la pantalla.
 -Inline - Block: es la fusión de las dos anteriores. Permite definir atributos de width y height a la etiqueta.
 
 -None: convierte el tag en invisible.
+  Sirve por ejemplo cuando en un viewport muy chico decidimos no mostrar una imagen. con bootstrap se pone class='d-none d-sm-block';
 
 -Flex: permite ordenar los elementos de forma flexible. Dentro del contenedor con display flex, los contenedores se ordenan como si fueran display inline. 
   El contenedor original se sigue comportando como block.
