@@ -1,0 +1,10 @@
+React es una libreria de Js, se conecta con el html.
+script.jsx es el intermediario entre los componentes.jsx y el html.
+
+https://reactjs.org/
+se ponen los links al final del body.
+Del mismo link, se importa el link de babel para que el html interprete bien los archivos jsx
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
